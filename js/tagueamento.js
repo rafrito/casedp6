@@ -7,3 +7,5 @@
 
 ga('create', '301940729', 'auto');
 ga('send', 'pageview');
+
+alert('O script foi executado!')

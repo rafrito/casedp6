@@ -5,7 +5,7 @@
         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-ga('create', '301940729', 'auto');
+ga('create', 'G-RN3JZDHKZK', 'auto');
 ga('send', 'pageview');
 
 alert('O script foi executado!')

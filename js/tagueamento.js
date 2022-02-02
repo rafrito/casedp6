@@ -70,7 +70,6 @@ const setEventsContato = () => {
 const setEventsAnalise = () => {
 
     for (let card of document.querySelectorAll(".card-montadoras")) {
-        console.log(card)
         card.onclick = () => {
             ga("send", "event", "analise", "ver_mais", card.getAttribute("data-name"));
         };
@@ -79,17 +78,13 @@ const setEventsAnalise = () => {
 
 const main = () => {
 
-    setGAPageview()
-    setEventsMenu()
+    setGAPageview();
+    setEventsMenu();
 
-    const eventosPaginas = {
-        "/casedp6/sobre.html": setEventsContato,
-        "/casedp6/analise.html": setEventsAnalise
-    }
+    let pagina = window.location.pathname;
 
-    let pagina = window.location.pathname
+    (pagina.includes('sobre') && setEventsContato()) ||
+        (pagina.includes('analise') && setEventsAnalise())
+};
 
-    pagina == '/casedp6' || eventosPaginas[pagina]()
-}
-
-main()
+main();

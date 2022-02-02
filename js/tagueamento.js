@@ -10,13 +10,13 @@ const setGAPageview = () => {
     ga("create", "UA-219135896-1", "auto");
     ga("send", "pageview");
 
-}
+};
 
 
 // Associa labels a elementos
 const setLabels = () => {
     let labels = document.getElementsByTagName("label");
-    for (label of labels) {
+    for (const label of labels) {
         if (label.htmlFor != '') {
             let elem = document.getElementById(label.htmlFor);
             if (elem)
@@ -42,7 +42,7 @@ const setEventsMenu = () => {
 // Envia eventos de clique no formulário
 const setEventsContato = () => {
 
-    setLabels()
+    setLabels();
     let formContato = document.querySelector("form.contato");
     for (let input of formContato.querySelectorAll("input")) {
 
@@ -61,8 +61,8 @@ const setEventsContato = () => {
         };
     };
     
-    const observer = new MutationObserver(mutationCallback)
-    observer.observe(document.body, { attributes: true })
+    const observer = new MutationObserver(mutationCallback);
+    observer.observe(document.body, { attributes: true });
 };
 
 
@@ -84,7 +84,7 @@ const main = () => {
     let pagina = window.location.pathname;
 
     (pagina.includes('sobre') && setEventsContato()) ||
-        (pagina.includes('analise') && setEventsAnalise())
+        (pagina.includes('analise') && setEventsAnalise());
 };
 
 main();

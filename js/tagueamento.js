@@ -83,13 +83,13 @@ const main = () => {
     setEventsMenu()
 
     const eventosPaginas = {
-        "/sobre": setEventsContato,
-        "/analise": setEventsAnalise
+        "/casedp6/sobre.html": setEventsContato,
+        "/casedp6/analise.html": setEventsAnalise
     }
 
     let pagina = window.location.pathname
 
-    pagina == '/' || eventosPaginas[pagina]()
+    pagina == '/casedp6' || eventosPaginas[pagina]()
 }
 
 main()
